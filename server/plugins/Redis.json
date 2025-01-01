@@ -1,0 +1,87 @@
+{
+  "name": "Redis",
+  "description": "Publish messages to Redis Channel",
+  "disable": false,
+  "trigger": "message",
+  "scope": "after",
+  "config": [
+    {
+      "name": "host",
+      "label": "Redis Host",
+      "description": "Redis Host",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "port",
+      "label": "Redis Port",
+      "description": "Redis Port",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "channel",
+      "label": "Redis Channel",
+      "description": "Pub/Sub Channel to publish messages to",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "username",
+      "label": "Username",
+      "description": "Redis Username",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "password",
+      "label": "Password",
+      "description": "Redis Password",
+      "type": "text",
+      "required": true
+    }
+  ],
+  "aliasConfig": [
+    {
+      "name": "enable",
+      "label": "Enable",
+      "description": "Send matching messages to your Slack Channel",
+      "type": "checkbox"
+    },
+    {
+      "name": "host",
+      "label": "Redis Host",
+      "description": "Redis Host",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "port",
+      "label": "Redis Port",
+      "description": "Redis Port",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "channel",
+      "label": "Redis Channel",
+      "description": "Pub/Sub Channel to publish messages to",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "username",
+      "label": "Username",
+      "description": "Redis Username",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "password",
+      "label": "Password",
+      "description": "Redis Password",
+      "type": "text",
+      "required": true
+    }
+  ]
+}
