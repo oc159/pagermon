@@ -124,6 +124,12 @@ docker build -t pagermon/pagermon .
 # For Raspberry Pi
 docker build -t pagermon/pagermon:latest-armhf -f Dockerfile.armhf .
 ```
+#### Windows specifics
+update the line-endings of the following files from CRLF to LF
+```
+root\etc\conf-init.d\01-logo.sh
+root\etc\services.d\run
+```
 
 #### Running
 
