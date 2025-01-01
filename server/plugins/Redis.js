@@ -3,19 +3,24 @@ var logger = require('../log');
 
 function run(trigger, scope, data, config, callback) {
   let pConf = data.pluginconf.Redis;
-  logger.main.debug('Redis Plugin Configuration: ' + JSON.stringify(pConf));
+  logger.main.debug('Redis Plugin Configuration by Alias: ' + JSON.stringify(pConf));
   if (pConf && pConf.enable) {
-    logger.main.debug('Test Redis Configuration');
+    logger.main.debug('Redis plugin is enabled');
 
-    if (data.pluginconf.Redis.host == "") {
-      logger.main.error('Redis: ' + data.host + ' Redis does not have the required configurations defined');
+    if (data.pluginconf.Redis.channel == ""){
+      logger.main.error('Redis: ' + 'Alias plugin does not have the required configurations defined.. defaulting to main');
       callback();
-    } else {
+    }
+    else if (data.pluginconf.Redis.channel == "") {
+      logger.main.error('Redis: ' + 'Main plugin definition does not have the required configurations defined... exiting');
+      callback();
+    } 
+    else {
 
-      logger.main.debug('Redis: Sending to ' + data.pluginconf.Redis.host + ': ' + JSON.stringify("Test data"));
+      logger.main.debug('Redis: Sending to ' + data.pluginconf.Redis.host);
       let host = config.host;
       let port = config.port;
-      let channel = config.channel;
+      let channel = data.pluginconf.Redis.channel || config.channel;
       let username = config.username;
       let password = config.password;
 

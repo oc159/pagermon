@@ -22,7 +22,7 @@
     {
       "name": "channel",
       "label": "Redis Channel",
-      "description": "Pub/Sub Channel to publish messages to",
+      "description": "Default Pub/Sub Channel to publish messages to",
       "type": "text",
       "required": true
     },
@@ -45,41 +45,13 @@
     {
       "name": "enable",
       "label": "Enable",
-      "description": "Send matching messages to your Slack Channel",
+      "description": "Send matching messages to your Redis Pub/Sub Channel",
       "type": "checkbox"
     },
     {
-      "name": "host",
-      "label": "Redis Host",
-      "description": "Redis Host",
-      "type": "text",
-      "required": true
-    },
-    {
-      "name": "port",
-      "label": "Redis Port",
-      "description": "Redis Port",
-      "type": "text",
-      "required": true
-    },
-    {
       "name": "channel",
-      "label": "Redis Channel",
+      "label": "Redis Channel specific to this capcode",
       "description": "Pub/Sub Channel to publish messages to",
-      "type": "text",
-      "required": true
-    },
-    {
-      "name": "username",
-      "label": "Username",
-      "description": "Redis Username",
-      "type": "text",
-      "required": true
-    },
-    {
-      "name": "password",
-      "label": "Password",
-      "description": "Redis Password",
       "type": "text",
       "required": true
     }
