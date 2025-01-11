@@ -7,20 +7,20 @@ function run(trigger, scope, data, config, callback) {
   if (pConf && pConf.enable) {
     logger.main.debug('Redis plugin is enabled');
 
-    if (data.pluginconf.Redis.channel == ""){
+    if (data.pluginconf.Redis.topic == ""){
       logger.main.error('Redis: ' + 'Alias plugin does not have the required configurations defined.. defaulting to main');
       callback();
     }
-    else if (data.pluginconf.Redis.channel == "") {
+    else if (config.Redis.topic == "") {
       logger.main.error('Redis: ' + 'Main plugin definition does not have the required configurations defined... exiting');
       callback();
     } 
     else {
 
-      logger.main.debug('Redis: Sending to ' + data.pluginconf.Redis.host);
+      //logger.main.debug('Redis: Sending to ' + data.pluginconf.Redis.host);
       let host = config.host;
       let port = config.port;
-      let channel = data.pluginconf.Redis.channel || config.channel;
+      let topic = data.pluginconf.Redis.topic || config.topic;
       let username = config.username;
       let password = config.password;
 
@@ -44,7 +44,7 @@ function run(trigger, scope, data, config, callback) {
         };
         logger.main.debug('Redis: Sending data: ' + JSON.stringify(message));
 
-        await publisher.publish(channel, JSON.stringify(message));
+        await publisher.publish(topic, JSON.stringify(message));
       })();
 
       callback();

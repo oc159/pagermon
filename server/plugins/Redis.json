@@ -1,6 +1,6 @@
 {
   "name": "Redis",
-  "description": "Publish messages to Redis Channel",
+  "description": "Publish messages to Redis Topics",
   "disable": false,
   "trigger": "message",
   "scope": "after",
@@ -20,9 +20,9 @@
       "required": true
     },
     {
-      "name": "channel",
-      "label": "Redis Channel",
-      "description": "Default Pub/Sub Channel to publish messages to",
+      "name": "topic",
+      "label": "Redis Topic",
+      "description": "Default Pub/Sub Topic to publish messages to",
       "type": "text",
       "required": true
     },
@@ -45,13 +45,13 @@
     {
       "name": "enable",
       "label": "Enable",
-      "description": "Send matching messages to your Redis Pub/Sub Channel",
+      "description": "Send matching messages to your Redis Pub/Sub Topic",
       "type": "checkbox"
     },
     {
-      "name": "channel",
-      "label": "Redis Channel specific to this capcode",
-      "description": "Pub/Sub Channel to publish messages to",
+      "name": "topic",
+      "label": "Redis Topic specific to this capcode",
+      "description": "Pub/Sub Topic to publish messages to",
       "type": "text",
       "required": true
     }
