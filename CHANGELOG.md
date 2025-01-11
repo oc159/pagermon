@@ -1,6 +1,9 @@
 # TBA
 * Fix PiBuilder @marshy #604
 
+# 0.3.14 - 2023-09-04
+* Add Plugin for Redis Topic Publishing @oc159
+
 # 0.3.13 - 2023-09-04
 * Add Config option to fix FA icon's no longer loading. @marshyonline
 
